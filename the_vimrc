@@ -1,0 +1,133 @@
+" Use Vim settings, rather than Vi settings (much better!).  This must be
+" first, because it changes other options as a side effect.
+set nocompatible "vi is dead. long live vim
+filetype off
+
+set ignorecase "case-insensitive matching when searching with /
+set smartcase "case-insensitive, except when including caps
+
+set expandtab  "i've seen the 'spaces' light. tabs are for tards.
+set nu         "line numbers down the side
+
+"set nobackup   "no backup files
+"set noswapfile "no swap files
+set backupdir=~/.backup "put this crap somewhere other than the cwd
+set directory=~/.backup "put this crap somewhere other than the cwd
+set undodir=~/.backup   "put this crap somewhere other than the cwd
+
+set undofile "enable undo across sessions. 'infinite undo'
+
+set antialias "i think this is supposed to make my fonts prettier
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" custom font settings for gui
+set guifont=Inconsolata:h18,Courier_New:h18
+set gfn=Inconsolata\ Medium\ 13
+
+set cursorline "highlight the line with the cursor on it.
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+set history=500     " keep 500 lines of command line history
+set ruler           " show the cursor position all the time
+set showcmd         " display incomplete commands
+set incsearch       " do incremental searching
+
+syntax on           " highlight syntax
+set hlsearch        " highlight searched-for items
+
+" 4 is the one-true tab-distance
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+set showbreak=\ \ \ \ \ \ \ \   "sets word wrap to indent next line by 8 spaces
+set lcs=trail:-,tab:>-          "highlight trailing spaces and tabs
+set list
+set visualbell                  "stop the stupid on-board "EEEEEERRRGH" sound
+set shiftround                  "round to the nearest tab, not +tabbing.
+set smartindent                 "indent for me
+set autoindent
+set guioptions-=T               "remove the toolbar from the gui version
+set ruler                       "show info in the bottom line
+""set expandtab
+set virtualedit=all             "let me scroll anywhere
+
+set colorcolumn=79              "higlight the column.
+
+autocmd FileType make set noexpandtab   "Makefiles are picky about tabs
+
+" Remapping for Colemak
+" 
+
+" This remaps the movemet keys j and k (In Colemak, J (= Qwerty Y) is placed
+" above K (= Qwerty N), which I find confusing in Vim since j moves down and k
+" up. I think the remappings below result in a more logical and easier to
+" reach layout, keeping in mind that space and backspace (= Qwerty Caps-Lock)
+" can be used instead of Colemak J (= Qwerty Y). I use the join-lines command
+" much more than the help command, and have therefore swapped J and K since I
+" find Colemak K (Qwerty N) much easier to reach than Colemak J (Qwerty Y).
+
+" The first five mappings are basically all one needs to remember.
+noremap K J
+noremap J K
+
+noremap h gk
+noremap j h
+noremap k gj
+
+noremap gh gk
+noremap gj gh
+noremap gk gj
+
+noremap zh zk
+"zK does not exist
+noremap zj zh
+noremap zJ zH
+noremap zk zj
+"zJ does not exist
+noremap z<Space> zl
+noremap z<S-Space> zL
+noremap z<BS> zh
+noremap z<S-BS> zH
+
+noremap <C-w>h <C-w>k
+noremap <C-w>H <C-w>K
+noremap <C-w>j <C-w>h
+noremap <C-w>J <C-w>H
+noremap <C-w>k <C-w>j
+noremap <C-w>K <C-w>J
+noremap <C-w><Space> <C-w>l
+noremap <C-w><S-Space> <C-w>L
+noremap <C-w><S-BS> <C-w>H
+
+let g:vundle_default_git_proto = 'git'
+
+" Vundle
+"
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'docunext/closetag.vim'
+
+filetype plugin indent on     " required!
+
+" Colours, even though I mostly use term settings
+syntax enable
+set background=dark
+"colorscheme solarized
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+colorscheme Tomorrow-Night
+
+" for go
+set rtp+=~/Dropbox/dev/el-vim/go/
+au BufRead,BufNewFile *.go setlocal filetype=go
