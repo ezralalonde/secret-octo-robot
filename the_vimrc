@@ -129,5 +129,8 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 colorscheme Tomorrow-Night
 
 " for go
-set rtp+=~/Dropbox/dev/el-vim/go/
+set rtp+=~/Dropbox/dev/secret-octo-robot/go/
 au BufRead,BufNewFile *.go setlocal filetype=go
+
+" automatically :Fmt code when I save
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
