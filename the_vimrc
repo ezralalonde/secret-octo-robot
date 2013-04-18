@@ -132,5 +132,3 @@ colorscheme Tomorrow-Night
 set rtp+=~/Dropbox/dev/secret-octo-robot/go/
 au BufRead,BufNewFile *.go setlocal filetype=go
 
-" automatically :Fmt code when I save
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
