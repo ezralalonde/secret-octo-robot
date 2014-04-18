@@ -119,6 +119,11 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'docunext/closetag.vim'
 
+" Some ruby plugins:
+Bundle 'ruby.vim'
+Bundle 'RubySinatra'
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+
 filetype plugin indent on     " required!
 
 " Colours, even though I mostly use term settings
