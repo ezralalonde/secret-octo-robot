@@ -11,9 +11,9 @@ set nu         "line numbers down the side
 
 "set nobackup   "no backup files
 "set noswapfile "no swap files
-set backupdir=~/.backup "put this crap somewhere other than the cwd
-set directory=~/.backup "put this crap somewhere other than the cwd
-set undodir=~/.backup   "put this crap somewhere other than the cwd
+set backupdir=~/.backup/bu  "put this crap somewhere other than the cwd
+set directory=~/.backup/dir "put this crap somewhere other than the cwd
+set undodir=~/.backup/undo  "put this crap somewhere other than the cwd
 
 set undofile "enable undo across sessions. 'infinite undo'
 
@@ -22,8 +22,7 @@ set antialias "i think this is supposed to make my fonts prettier
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" custom font settings for gui
-set guifont=Inconsolata:h18,Courier_New:h18
+" custom font settings fo18,Courier_New:h18
 set gfn=Inconsolata\ Medium\ 13
 
 set cursorline "highlight the line with the cursor on it.
