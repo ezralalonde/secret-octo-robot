@@ -108,20 +108,27 @@ let g:vundle_default_git_proto = 'git'
 
 " Vundle
 "
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
 
 " My Bundles here:
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'docunext/closetag.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'docunext/closetag.vim'
 
 " Some ruby plugins:
-Bundle 'ruby.vim'
-Bundle 'RubySinatra'
+Plugin 'ruby.vim'
+Plugin 'RubySinatra'
+
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+
+call vundle#end()
+
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 filetype plugin indent on     " required!
@@ -129,9 +136,7 @@ filetype plugin indent on     " required!
 " Colours, even though I mostly use term settings
 syntax enable
 set background=dark
-"colorscheme solarized
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-colorscheme Tomorrow-Night
+colorscheme solarized
 
 " for go
 set rtp+=~/Dropbox/dev/secret-octo-robot/go/
