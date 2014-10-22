@@ -127,6 +127,8 @@ Plugin 'RubySinatra'
 
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
+Plugin 'fatih/vim-go'
+
 call vundle#end()
 
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
@@ -139,6 +141,6 @@ set background=dark
 colorscheme solarized
 
 " for go
-set rtp+=~/Dropbox/dev/secret-octo-robot/go/
 au BufRead,BufNewFile *.go setlocal filetype=go
+
 
